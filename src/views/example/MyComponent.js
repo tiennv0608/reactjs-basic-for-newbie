@@ -2,28 +2,56 @@ import React from "react";
 
 class MyComponent extends React.Component {
   state = {
-    name: "James",
-    channel: "none",
+    firstName: "",
+    lastName: "",
   };
 
-  handleOnChangeName = (event) => {
+  handleChangeFirstName = (event) => {
     this.setState({
-      name: event.target.value,
+      firstName: event.target.value,
     });
+  };
+
+  handleChangeLastName = (event) => {
+    this.setState({
+      lastName: event.target.value,
+    });
+  };
+
+  handleSubmit = () => {
+    console.log(">>>> check data input:", this.state);
   };
 
   render() {
     return (
       <>
-        <div className="first">
+        <form>
+          <label htmlFor="fname">First name:</label> <br />
           <input
-            value={this.state.name}
             type="text"
-            onChange={(event) => this.handleOnChangeName(event)}
+            id="fname"
+            value={this.state.firstName}
+            onChange={(event) => {
+              this.handleChangeFirstName(event);
+            }}
           />
-          My name is {this.state.name}
-        </div>
-        <div className="second">My channel is : {this.state.channel}</div>
+          <br />
+          <label htmlFor="lname">Last name:</label> <br />
+          <input
+            type="text"
+            id="lname"
+            value={this.state.lastName}
+            onChange={(event) => {
+              this.handleChangeLastName(event);
+            }}
+          />
+          <br />
+          <input
+            type="button"
+            value="Submit"
+            onClick={() => this.handleSubmit()}
+          />
+        </form>
       </>
     );
   }
