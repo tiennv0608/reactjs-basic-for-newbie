@@ -57,6 +57,7 @@ class AddComponent extends React.Component {
           }}
         />
         <br />
+        <br />
         <input
           type="button"
           value="Submit"
