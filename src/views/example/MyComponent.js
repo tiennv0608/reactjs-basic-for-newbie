@@ -36,12 +36,9 @@ class MyComponent extends React.Component {
     );
   }
 
-  componentDidMount() {
-    console.log(">>> run component did mount");
-  }
+  componentDidMount() {}
 
   render() {
-    console.log(">>> call render");
     return (
       <>
         <AddComponent addNewJob={this.addNewJob} />
