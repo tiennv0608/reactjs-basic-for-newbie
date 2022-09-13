@@ -34,7 +34,7 @@ class ListUser extends React.Component {
                   key={item.id}
                   onClick={() => this.handleViewDetailUser(item)}
                 >
-                  {index + 1} - {item.first_name} - {item.last_name}
+                  {index + 1} - {item.first_name} {item.last_name}
                 </div>
               );
             })}
